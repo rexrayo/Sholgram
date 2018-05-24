@@ -1,0 +1,8 @@
+<div class="form-group">
+	<%= form_for @avatar do |f| %>
+		<%= f.label :avatar %> <br>
+		<%= f.file_field :avatar %> 
+		<br>
+		<%= f.submit 'Subir', :class => 'btn btn-primary' %>
+	<% end %>
+</div>

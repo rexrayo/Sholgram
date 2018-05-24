@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<% if user_signed_in? %>
+				
+			<div class="row">
+				<div class="col-4">
+					<div class="container" class="media mt-3">
+						<img class="rounded-circle" style="width: 150px; height: 150px; margin-bottom: 10px; margin-left: 180px;" src="http://alumni.crg.eu/sites/default/files/default_images/default-picture_0_0.png" >
+					
+					</div>
+				</div>
+				<div class="col-8">
+					<h1><%= current_user.name %></h1>
+					<div>
+						<ul class="nav">
+							<li class="margin-right">
+								<p> <strong><%= @images.count %></strong> publicaciones</p>
+							</li>
+							<li class="margin-right">
+								<p> <strong> <%= rand(1000)%> </strong> seguidores</p>
+							</li>
+							<li class="margin-right">
+								<p> <strong> <%= rand(700) %> </strong> seguidos</p>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="images">
+				<%= render @images %>
+			</div>
+			<%= will_paginate @images %>
+		<% else %>
+			<h1 align="center">Sholgram</h1>
+		<% end %>
+</body>
+</html>
